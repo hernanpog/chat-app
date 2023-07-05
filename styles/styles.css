@@ -1,0 +1,416 @@
+:root {
+  /* Primary colors */
+  --clr-pale-violet: hsl(276, 100%, 81%);
+  --clr-mod-violet: hsl(276, 55%, 52%);
+  --clr-mod-dark-violet: hsl(271, 15%, 43%);
+  --clr-grayish-blue: hsl(206, 6%, 79%);
+  --clr-dark-des-violet: hsl(271, 36%, 24%);
+  --clr-dark-grayish-violet: hsl(270, 7%, 64%);
+
+  /* Secondary colors */
+
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-light-grayish-violet: hsl(270, 20%, 96%);
+  --clr-very-dark-des-violet: hsl(271, 36%, 24%);
+  --clr-very-light-magenta: hsl(289, 100%, 72%);
+
+  /* Gradients colors */
+
+  --clr-light-magenta: hsl(293, 100%, 63%);
+  --clr-light-violet: hsl(264, 100%, 61%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  min-height: 100svh;
+  margin: 0;
+  line-height: 1.5;
+  font-size: .5rem;
+  font-family: 'Rubik';
+  background-color: var(--clr-light-grayish-violet);
+}
+
+img,
+picture {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+@media screen and (min-width: 970px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* BACKGROUND SHAPES */
+
+.topleft-shape {
+  position: absolute;
+  top: -37.25%;
+  left: -337.5px;
+  z-index: 1;
+  width: 525px;
+  height: 100svh;
+  border-radius: 0 0 35em 35em;
+  background-image: linear-gradient(to bottom, var(--clr-light-magenta), var(--clr-light-violet));
+}
+
+.bottomright-shape {
+  position: absolute;
+  bottom: -16.75em;
+  right: -337.5px;
+  z-index: 1;
+  width: 525px;
+  height: 510px;
+  border-radius: 35em 35em 0 0;
+  background-color: hsla(276, 55%, 52%, 0.03);
+}
+
+@media screen and (min-width: 970px) {
+  .topleft-shape {
+    top: -12.5%;
+    left: -110px;
+  }
+
+  .bottomright-shape {
+    height: 85svh;
+    bottom: 0;
+    right: -205px;
+  }
+}
+
+/* PHONE/APP (MAIN CONTAINER) */
+
+@media screen and (min-width: 970px) {
+  main {
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 7em;
+    gap: 16em;
+    min-width: 828px;
+    width: 57.5%;
+  }
+}
+
+.app {
+  position: relative;
+  z-index: 2;
+  max-width: 247.5px;
+  margin: 8em auto 7.5em;
+  box-shadow: .25em 2em 4em hsla(271, 36%, 24%, 0.2);
+  border: 1.25em solid var(--clr-white);
+  border-radius: 4em;
+  background-color: var(--clr-light-grayish-violet);
+}
+
+@media screen and (min-width: 970px) {
+  .app {
+    margin: 0;
+  }
+}
+
+.white-shape {
+  position: absolute;
+  z-index: 3;
+  top: -1.25em;
+  left: 20%;
+  width: 60%;
+  height: 3.5em;
+  border-radius: 1.5em;
+  background-color: white;
+}
+
+/* PROFILE */
+
+.profile {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0 0 1.5em;
+  padding: 3.5em 1em 1.5em;
+  background-image: linear-gradient(to right, var(--clr-light-violet), var(--clr-light-magenta));
+  border-radius: 2.5em 2.5em .5em .5em;
+}
+
+/* GO-BACK ARROW */
+
+.profile-arrow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1 / 1;
+  width: 7.5%;
+  margin-right: .5em;
+}
+
+.profile-arrow-one {
+  position: relative;
+  top: -4%;
+  left: 2.5%;
+  width: 35%;
+  height: 12%;
+  border-radius: 1em;
+  transform: rotate(115deg);
+  background-color: white;
+}
+
+.profile-arrow-two {
+  position: relative;
+  top: 4%;
+  left: 2.5%;
+  width: 35%;
+  height: 12%;
+  border-radius: 1em;
+  transform: rotate(245deg);
+  background-color: white;
+}
+
+/* PROFILE IMAGE & INFO */
+
+.profile-image {
+  aspect-ratio: 1 / 1;
+  width: 11%;
+  margin-right: 1em;
+  border: 1px solid var(--clr-white);
+  border-radius: 50%;
+}
+
+.profile-image img {
+  border-radius: 50%;
+}
+
+.profile-info {
+  line-height: 1.4;
+}
+
+.profile-name {
+  font-size: .68rem;
+  font-weight: 500;
+  color: hsla(0, 0%, 100%, 0.9);
+}
+
+.profile-status {
+  color: var(--clr-pale-violet);
+}
+
+/* KEBAB MENU ICON */
+
+.three-dots {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 7%;
+  margin-left: auto;
+  border-radius: 50%;
+}
+
+.dot {
+  aspect-ratio: 1 / 1;
+  width: 12%;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.dot + .dot {
+  margin-top: .15em;
+}
+
+/* STYLES FOR MESSAGES IN GENERAL */
+
+.msg + .msg {
+  margin-top: 1em;
+}
+
+.msg {
+  width: 57.5%;
+  padding: .825em 1em;
+  border-radius: 1.5em;
+  line-height: 1.25;
+}
+
+/* DOG OWNER'S PICTURES & MESSAGES */
+
+.dog-owner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 2em 1em;
+}
+
+.dog-pictures {
+  display: flex;
+  width: 65%;
+  margin-bottom: 1em;
+}
+
+.dog {
+  aspect-ratio: 1 / 1;
+  width: 30%;
+  border-radius: 1.25em;
+}
+
+.dog + .dog {
+  margin-left: 1em;
+}
+
+.dog-owner-msg {
+  box-shadow: 0 .3em 1em hsla(0, 0%, 0%, 0.05);
+  border-radius: 1.5em 1.5em .6em;
+  color: var(--clr-dark-des-violet);
+  background-color: var(--clr-white);
+}
+
+.dog-owner-msg-two {
+  width: fit-content;
+}
+
+/* SAMUEL'S MESSAGES */
+
+.samuel-msg {
+  color: var(--clr-mod-violet);
+  background-color: hsla(276, 55%, 52%, 0.07);
+  border-radius: 1.5em 1.5em 1.5em .6em;
+  margin-left: 1em;
+}
+
+/* TIME-PRICE OPTIONS */
+
+.walk-options {
+  display: flex;
+  align-items: center;
+  width: 70%;
+  margin: 1em;
+  padding: .8em 2.25em .8em 1em;
+  border-radius: 1.5em 1.5em 1.5em .6em;
+  background-image: linear-gradient(to right, var(--clr-light-magenta), var(--clr-light-violet));
+}
+
+.radio {
+  aspect-ratio: 1 / 1;
+  width: 1.5em;
+  margin-right: 1em;
+  border: 1px solid var(--clr-very-light-magenta);
+  border-radius: 50%;
+}
+
+.time {
+  color: hsla(0, 0%, 100%, 0.8);
+}
+
+.price {
+  margin-left: auto;
+  font-size: .8rem;
+  font-weight: 700;
+  color: white;
+}
+
+/* BOTTOM TEXT BAR */
+
+.msg-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2em 1em 1.4em;
+  padding: .6em .5em .6em 2.25em;
+  border-radius: 2em;
+  background-color: white;
+}
+
+.type-msg {
+  font-size: .55rem;
+  color: var(--clr-grayish-blue);
+}
+
+/* SUBMIT BUTTON */
+
+.input-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1 / 1;
+  width: 3em;
+  border-radius: 50%;
+  background-color: var(--clr-very-dark-des-violet);
+}
+
+.arrow-one {
+  position: relative;
+  top: -2.5%;
+  left: 2.5%;
+  width: 35%;
+  height: 12%;
+  border-radius: 1.5em;
+  background-color: white;
+  transform: rotate(45deg);
+}
+
+.arrow-two {
+  position: relative;
+  top: 2.5%;
+  left: 2.5%;
+  width: 35%;
+  height: 12%;
+  border-radius: 1.5em;
+  background-color: white;
+  transform: rotate(135deg);
+}
+
+/* TITLE-DESCRIPTION */
+
+.content {
+  width: 82.5%;
+  margin: 0 auto 8em;
+}
+
+.title {
+  margin-bottom: .4em;
+  font-size: 2.5rem;
+  font-weight: 500;
+  text-align: center;
+  color: var(--clr-very-dark-des-violet);
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.75;
+  text-align: center;
+  color: var(--clr-dark-grayish-violet);
+}
+
+@media screen and (min-width: 970px) {
+  .content {
+    position: relative;
+    z-index: 2;
+    width: 60%;
+    margin: 0;
+  }
+
+  .title {
+    text-align: start;
+  }
+
+  .description {
+    text-align: start;
+  }
+}
